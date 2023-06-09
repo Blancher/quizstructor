@@ -28,7 +28,7 @@ export default function NewTopic() {
 
     return (
         <div className='fade'>
-            <h1>{editing === 'true' ? `Editing ${name.replace('`', ' ')}` : 'New Topic'}</h1>
+            <h1>{editing === 'true' ? `Editing ${name}` : 'New Topic'}</h1>
             <form onSubmit={handleFormSubmit}>
                 <Input classes={inputClasses} message={message} type='Topic' placeholder='Topic Name' onChange={handleChange} onBlur={handleBlur} invalid={invalid} defaultValue={editing === 'true' ? name.replace('`', ' ') : ''}/>
                 <button className='button'>{editing === 'true' ? 'Update' : 'Add'} Topic</button>
