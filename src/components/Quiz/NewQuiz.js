@@ -54,7 +54,7 @@ export default function NewQuiz() {
 
     return (
         <div className='fade'>
-            <h1>{editing === 'true' ? `Editing ${quizName.replace('`', ' ')}` : 'New Topic'}</h1>
+            <h1>{editing === 'true' ? `Editing ${quizName}` : 'New Quiz'}</h1>
             {cards.length === 0 && <p className='topError'>Your quiz needs cards to be created</p>}
             <Input classes={nameInputClasses} message={nameMessage} type='Quiz' placeholder='Quiz Name' value={nameInput} onChange={handleNameChange} onBlur={handleNameBlur} invalid={nameInvalid}/>
             {editing === 'false' && (
