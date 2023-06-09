@@ -5,9 +5,357 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(white, rgb(186, 191, 238));
+  background-attachment: fixed;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  font-family: 'Quicksand';
+  box-sizing: border-box;
+  transition: .25s;
+}
+
+.fade {
+  animation: fade-in;
+  animation-duration: .25s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.navlink {
+  text-decoration: none;
+  color: navy;
+  font-size: 25px;
+  margin: 10px;
+  text-shadow: .5px .5px navy;
+}
+
+.navlink.active {
+  border-bottom: 3px solid navy;
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+}
+
+#title {
+  font-size: 40px;
+  position: relative;
+  top: 15px;
+  border-bottom: 3px solid navy;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  color: navy;
+  font-style: italic;
+}
+
+#nav {
+  background: linear-gradient(rgb(236, 158, 132), #e5fae2);
+  position: relative;
+  bottom: 27px;
+  border-bottom: 3px solid black;
+}
+
+#about {
+  width: 350px;
+  text-align: center;
+  margin: auto;
+}
+
+p {
+  font-size: 24.8px;
+}
+
+.text {
+  text-align: center;
+}
+
+.button {
+  text-decoration: none;
+  display: block;
+  margin: auto;
+  color: navy;
+  background: linear-gradient(rgb(236, 158, 132), #e5fae2);
+  width: 220px;
+  height: 55px;
+  padding: 9px;
+  text-align: center;
+  font-size: 23px;
+  border-radius: 10px;
+  border: 3px inset navy;
+}
+
+.button:hover {
+  width: 230px;
+  height: 60px;
+  padding-top: 11px;
+  cursor: pointer;
+}
+
+.button:active {
+  background: linear-gradient(#e5fae2, rgb(236, 158, 132));
+}
+
+input, select {
+  margin: 30px auto;
+  width: 220px;
+  height: 55px;
+  font-size: 15px;
+  border-radius: 10px;
+  display: block;
+  padding: 15px;
+  border: 3px inset black;
+}
+
+.invalid p {
+  text-align: center;
+  color: rgb(116, 5, 5);
+  font-size: 15px;
+  margin: -20px;
+}
+
+.invalid input, .invalid select {
+  background-color: rgb(116, 5, 5);
+  opacity: .5;
+}
+
+.fade-enter-active {
+  animation: fade-in;
+  animation-duration: .25s;
+}
+
+.fade-exit-active {
+  animation: fade-out;
+  animation-duration: .25s;
+}
+
+.shrink-enter {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.shrink-enter-active {
+  height: 300px;
+  opacity: 1;
+  transition: height 250ms, opacity 250ms;
+}
+
+.shrink-exit {
+  height: 430px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.shrink-exit-active {
+  height: 0;
+  opacity: 0;
+  transition: height 250ms, opacity 250ms;
+}
+
+.card-shrink-enter {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.card-shrink-enter-active {
+  height: 120px;
+  opacity: 1;
+  transition: height 250ms, opacity 250ms;
+}
+
+.card-shrink-exit {
+  height: 120px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.card-shrink-exit-active {
+  height: 0;
+  opacity: 0;
+  transition: height 250ms, opacity 250ms;
+}
+
+.card {
+  background: linear-gradient(rgb(236, 158, 132), #e5fae2);
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 3px inset navy;
+  cursor: pointer;
+  position: relative;
+  max-height: 120px;
+}
+
+.card:hover {
+  border: 10px inset navy;
+}
+
+.card p {
+  margin: 10px;
+}
+
+#cards {
+  justify-content: center;
+}
+
+.button {
+  margin: 30px auto;
+}
+
+.quizCard {
+  border-radius: 10px;
+  border: 3px inset navy;
+  border-top: none;
+  padding: 10px;
+  max-width: 300px;
+  margin: 22px auto;
+  max-height: 300px;
+}
+
+.topError {
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(116, 5, 5);
+  font-size: 27px;
+}
+
+.flashcard {
+  background: linear-gradient(rgb(236, 158, 132), #e5fae2);
+  text-align: center;
+  width: 90%;
+  margin: 30px auto;
+  padding: 40px;
+  border-radius: 10px;
+  border: 3px solid navy;
+  cursor: pointer;
+}
+
+.flashcard:hover {
+  border: 10px solid navy;
+}
+
+.change {
+  height: 50px;
+  display: block;
+  width: 60px;
+  height: 30px;
+  position: relative;
+  right: 40px;
+  background: linear-gradient(white, rgb(186, 191, 238));
+  border: 1px inset navy;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.fade-enter-active {
+  animation: fade-in;
+  animation-duration: .25s;
+}
+
+.fade-exit-active {
+  animation: fade-out;
+  animation-duration: .25s;
+}
+
+@keyframes bgIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .5;
+  }
+}
+
+@keyframes bgOut {
+  from {
+    opacity: .5;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.bg-fade-enter-active {
+  animation: bgIn;
+  animation-duration: .25s;
+}
+
+.bg-fade-exit-active {
+  animation: bgOut;
+  animation-duration: .25s;
+}
+
+#transparent {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  z-index: 1;
+}
+
+#modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  z-index: 2;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  border: 3px inset navy;
+  background: linear-gradient(rgb(236, 158, 132), #e5fae2);
+}
+
+h2 {
+  width: 250px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+#buttons {
+  margin: auto;
+  width: 140px;
+}
+
+.fadeAnimation {
+  animation: fade-in;
+  animation-duration: .25s;
 }
