@@ -24,7 +24,7 @@ export default function NewQuiz() {
                 }
             });
         });
-    };
+    }
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const names = [];
