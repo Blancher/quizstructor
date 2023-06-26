@@ -11,6 +11,9 @@ export default function NewQuiz() {
     const state = useSelector(state => state);
     const [searchParams] = useSearchParams();
     const editing = searchParams.get('editing');
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     let quizName;
     let quizData;
     let topic;
@@ -24,9 +27,8 @@ export default function NewQuiz() {
                 }
             });
         });
-    }
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
+    };
+
     const names = [];
     state.forEach(item => item.quizzes.forEach(quiz => names.push(quiz.name)));
     const [nameInput, nameValid, nameInputClasses, handleNameChange, handleNameBlur, handleNameSubmit, nameInvalid, nameMessage] = useInput(names, editing === 'true' ? 'special' : 'name', 'Quiz', quizName);
@@ -46,6 +48,7 @@ export default function NewQuiz() {
         handleNameSubmit();
         handleTopicSubmit();
         cards.forEach(card => card.handleSubmit());
+        
         if (valid && cards.length > 0) {
             dispatch(editing === 'false' ? actions.addQuiz({topic: topicInput, name: nameInput, data: cards}) : actions.editQuiz({topic: topic, oldName: quizName, newName: nameInput, data: cards}));
             navigate('/quizzes');
