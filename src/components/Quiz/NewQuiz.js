@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {useNavigate, useSearchParams} from 'react-router-dom';
+import {useNavigate, useSearchParams} from 'react-roter-dom';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import useInput from "../../hooks/useInput";
 import Input from "../Input";
