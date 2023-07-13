@@ -33,7 +33,7 @@ export default function NewQuiz() {
     state.forEach(item => item.quizzes.forEach(quiz => names.push(quiz.name)));
     const [nameInput, nameValid, nameInputClasses, handleNameChange, handleNameBlur, handleNameSubmit, nameInvalid, nameMessage] = useInput(names, editing === 'true' ? 'special' : 'name', 'Quiz', quizName);
     const [topicInput, topicValid, topicInputClasses, handleTopicChange, handleTopicBlur, handleTopicSubmit, topicInvalid, topicMessage] = useInput([], 'name', 'Quiz');
-    const [cards, setCards] = useState(quizData || [{id: Date.now(), front: '', back: '', valid: false, handleSubmit() {}, reset() {}}]);
+    const [cards, setCards] = useState(quizData || [{id: Date.now(), front: '', back: '', valid: false, handleSubmit() {}}]);
     const cardsArray = [];
     cards.forEach(card => {
         cardsArray.push(card.front);
