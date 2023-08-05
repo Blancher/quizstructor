@@ -11,8 +11,8 @@ export default function Quizzes() {
     return (
         <div className='fade'>
             <h1>Quizzes</h1>
-            {topics.length === 0 && <p className='text'>No quizzes have been created.</p>}
-            {topics.length > 0 && (
+            {quizzes.length === 0 && <p className='text'>No quizzes have been created.</p>}
+            {quizzes.length > 0 && (
                 <TransitionGroup compenent='div' id='cards' className='flex'>
                     {quizzes.map((quiz, i) => (
                         <CSSTransition key={i} mountOnEnter unmountOnExit classNames='card-shrink' timeout={250}>
