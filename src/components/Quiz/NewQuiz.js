@@ -67,11 +67,7 @@ export default function NewQuiz() {
                     </CSSTransition>
                     <select value={topicInput} onChange={handleTopicChange} onBlur={handleTopicBlur}>
                         <option value=''>Topic</option>
-                        {state.map((item, i) => (
-                            <option key={i} value={item.name}>
-                                {item.name}
-                            </option>
-                        ))}
+                        {state.map((item, i) => <option key={i} value={item.name}>{item.name}</option>)}
                     </select>
                 </div>
             )}
