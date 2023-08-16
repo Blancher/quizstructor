@@ -35,11 +35,11 @@ export default function NewQuiz() {
     const [topicInput, topicValid, topicInputClasses, handleTopicChange, handleTopicBlur, handleTopicSubmit, topicInvalid, topicMessage] = useInput([], 'name', 'Quiz');
     const [cards, setCards] = useState(quizData || [{id: Date.now(), front: '', back: '', valid: false, handleSubmit() {}}]);
     const cardsArray = [];
+    const valid = nameValid && (editing === 'true' ? true : topicValid) && cards.every(card => card.valid) && cards.length > 0;
     cards.forEach(card => {
         cardsArray.push(card.front);
         cardsArray.push(card.back);
     });
-    const valid = nameValid && (editing === 'true' ? true : topicValid) && cards.every(card => card.valid) && cards.length > 0;
 
     const handleAddItem = () => setCards(prev => [...prev, {id: Date.now(), front: '', back: '', valid: false, handleSubmit() {}}]);
     const handleUpdateItem = (id, front, back, valid, handleSubmit) => setCards(prev => prev.map(card => card.id === id ? {id: id, front: front, back: back, valid: valid, handleSubmit: handleSubmit} : card));
